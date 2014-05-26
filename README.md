@@ -11,5 +11,5 @@ Compare Tool 1.0
 
 3. 执行compare.bat
 
-4. 当前目录下生产output目录
+4. 当前目录下自动生成output目录
 
