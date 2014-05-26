@@ -1,0 +1,20 @@
+load "%1" "%2"
+
+expand all
+filter -.svn\
+criteria binary
+folder-report layout:summary options:display-mismatches output-to:./output/CompareReport.txt
+
+expand all
+filter -.svn\ -.git\
+criteria binary
+#diff | exact | newer | older | orphan | all
+select lt.diff.files lt.orphan.files
+copyto lt path:relative ./output/old
+
+expand all
+filter -.svn\ -.git\
+criteria binary
+select rt.diff.files rt.orphan.files
+copyto rt path:relative ./output/new
+
