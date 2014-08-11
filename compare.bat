@@ -8,13 +8,16 @@ echo .
 echo ================================
 
 rem set new/old source code path
-set new="new path"
-set old="old path"
+set new="new file path"
+set old="old file path"
 
-rem inital run environment
+rem set BCompare.exe path
+set bcPath="path of BCompare.exe"
+
+rem create output directory
 if exist "output" rd /s /q output
 mkdir output
 
-rem set BeyoundComapre3 install path
-if exist "path of BCompare.exe" "path of BCompare.exe" @script.bc %old% %new%
+rem run the script
+if exist %bcPath% %bcPath% @script.bc %old% %new%
 
